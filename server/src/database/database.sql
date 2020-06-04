@@ -1,0 +1,25 @@
+CREATE DATABASE nlw;
+
+CREATE TABLE spots (
+    id BIGSERIAL PRIMARY KEY,
+    imagem VARCHAR(255) NOT NULL,
+    nome VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    whatsapp VARCHAR(30) NOT NULL,
+    latitude DOUBLE PRECISION NOT NULL,
+    longitude DOUBLE PRECISION NOT NULL,
+    city VARCHAR(255) NOT NULL,
+    UF VARCHAR(2) NOT NULL);
+
+CREATE TABLE items (
+    id BIGSERIAL PRIMARY KEY,
+    imagem VARCHAR(255) NOT NULL,
+    title VARCHAR(255) NOT NULL);
+
+CREATE TABLE spots_itens (
+    id BIGSERIAL PRIMARY KEY,
+    spot_id INTEGER NOT NULL,
+        FOREIGN KEY (spot_id) REFERENCES spots (id),
+
+    item_id INTEGER NOT NULL, 
+        FOREIGN KEY (item_id) REFERENCES items (id));
