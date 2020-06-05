@@ -16,7 +16,7 @@ CREATE TABLE items (
     imagem VARCHAR(255) NOT NULL,
     title VARCHAR(255) NOT NULL);
 
-CREATE TABLE spots_itens (
+CREATE TABLE spots_items (
     id BIGSERIAL PRIMARY KEY,
     spot_id INTEGER NOT NULL,
         FOREIGN KEY (spot_id) REFERENCES spots (id),
