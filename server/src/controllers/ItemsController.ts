@@ -5,7 +5,6 @@ class ItemsController {
     
     async index(req: Request, res: Response){
         const data = await pool.query('SELECT * FROM items')
-        console.log(data.rows)
         const serializedItems = data.rows.map((item: { id: String, title: String; imagem: String}) => {
             return{
                 id: Number(item.id),
